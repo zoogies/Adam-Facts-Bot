@@ -15,18 +15,18 @@ token = ''
 meorhim = 0
 skip = 0
 i = 0
+lenlist = 0
 
 #functions
-def initialize():
-    scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-    creds = ServiceAccountCredentials.from_json_keyfile_name('adam-facts-656e16643bf7.json',scope)
-    gspreadclient = gspread.authorize(creds)
-    sheets = gspreadclient.open('adam_facts').sheet1
-    facts = sheets.col_values(2)
-    lenlist = len(facts)
-    i = 0
-    sentbefore = []
-    messagenum = 0
+scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+creds = ServiceAccountCredentials.from_json_keyfile_name('adam-facts-656e16643bf7.json',scope)
+gspreadclient = gspread.authorize(creds)
+sheets = gspreadclient.open('adam_facts').sheet1
+facts = sheets.col_values(2)
+lenlist = len(facts)
+i = 0
+sentbefore = []
+messagenum = 0
 
 def pickmessage(messagenum):
     messagenum = random.randint(0,(lenlist))
@@ -82,7 +82,7 @@ def animation():
     print('(##########)')
     time.sleep(1)
 
-initialize()
+
 
 #other stuff that i had a hard time putting into a function so i just didnt
 print(' ')
@@ -92,10 +92,10 @@ time.sleep(1)
 meorhim = int(input('Adam 1, Me 2: '))
 if meorhim == 1:
     #adams
-    token = 'lol im not giving you the token just because you looked at the code'
+    token = 'REPLACE WITH TOKEN'
 else:
     #mine
-    token = 'lol im not giving you the token just because you looked at the code'
+    token = 'REPLACE WITH TOKEN'
 print('')
 time.sleep(1)
 skip = int(input('Enter 0 to skip or 1 to play animation: '))
@@ -108,7 +108,7 @@ else:
     animation()
 print('')
 print('Signed in on:')
-if token == 'nope you cant find it here either':
+if token == 'REPLACE WITH TOKEN':
     print('Adam Alsko')
 else:
     print('Ryan Zmuda')
@@ -162,12 +162,12 @@ while True:
 
         if messageslist[0] == '!submit':
             print(str(currentDT) + ' !submit')
-            group.post('[redacted]')
+            group.post('https://forms.gle/ixdAPo5atZYbxapK7')
             time.sleep(2)
 
         if messageslist[0] == '!list':
             print(str(currentDT) + ' !list')
-            group.post('The full list of commands can be found here: [redacted]')
+            group.post('The full list of commands can be found here: https://bit.ly/2YXo8WC')
             time.sleep(2)
 
         if messageslist[0] == '!god':
@@ -183,6 +183,7 @@ while True:
         if messageslist[0] == '!fact3':
             print(str(currentDT) + ' !fact3')
             threemessage(messagenum1,messagenum2,messagenum3)
+            discoveries = discoveries + 3
             time.sleep(2)
 
         if messageslist[0] == '!coinflip':
@@ -215,5 +216,15 @@ while True:
             group.post('How do you it know this 😂')
             time.sleep(2)
 
-        time.sleep(5)
+        if messageslist[0] == '!code':
+            print(str(currentDT) + ' !code')
+            group.post('The code for the bot can be found here: https://github.com/Yoyolick/Adam-Facts-Bot')
+            time.sleep(2)
 
+        if messageslist[0] == '!came':
+            print(str(currentDT) + ' !came')
+            group.post('The past is in the past, i have already eaten it.')
+            time.sleep(2)
+
+        time.sleep(5)
+#https://github.com/Yoyolick/Adam-Facts-Bot
