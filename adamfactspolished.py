@@ -145,9 +145,9 @@ while True:
             discoveries = discoveries + 1
             time.sleep(2)
 
-        if messageslist[0] == '!cum':
-            print(str(currentDT) + ' !cum')
-            group.post('cum')
+        if messageslist[0] == '!REDACTED':
+            print(str(currentDT) + ' !REDACTED')
+            group.post('REDACTED')
             time.sleep(2)
 
         if messageslist[0] == '!discoveries':
